@@ -1,0 +1,31 @@
+<header >
+
+	<div class="logo"> Powered by<a class="atari" href="https://ro.wikipedia.org/wiki/Atari"> Atari</a></div>
+		
+	<nav>
+		<ul>
+
+			<li><a href="index" class="home"> Home</a></li>
+			<li><a href="about"> About</a></li>
+			<li><a href="howtoplay"> How to play </a></li>
+			<li><a href="leaderboard"> Leaderboard </a></li>
+			<li class= "sub-menu"><a class="red_text"> Play </a>
+				<ul>
+				<li><a href="1vs1"> 1 vs 1 </a></li>
+				<li><a href="breakout"> Breakout </a></li>
+				</ul>
+			</li>
+				<% if(loggedin == false) { %> 
+					<li><a href="/login"> Sign in</a></li>
+				<% } else{ %> 
+					<li><a href="/logout"> Sign out</a></li>
+				   <% } %>
+			</a></li>
+		
+			
+		</ul>
+	</nav>
+
+	<div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+	
+</header>
