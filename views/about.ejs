@@ -1,0 +1,48 @@
+<% include ../partials/head%>
+
+	
+
+<body>
+    <% include ../partials/header%>
+<b><a class="title">About </a></b>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="text2 row">
+	<p>Breakout begins with eight rows of bricks, with each two rows a different color. The color order from the bottom up is yellow, green, orange and red. Using a single ball, the player must knock down as many bricks as possible by using the walls and/or the paddle below to ricochet the ball against the bricks and eliminate them. If the player's paddle misses the ball's rebound, they will lose a turn. The player has three turns to try to clear two screens of bricks. Yellow bricks earn one point each, green bricks earn three points, orange bricks earn five points and the top-level red bricks score seven points each. The paddle shrinks to one-half its size after the ball has broken through the red row and hit the upper wall. Ball speed increases at specific intervals: after four hits, after twelve hits, and after making contact with the orange and red rows.
+
+	<p >Breakout was the basis and inspiration for certain aspects of the Apple II personal computer. In 1978, the game was ported to the Atari 2600 and a sequel was made, Super Breakout, which four years later became the "pack-in game" for the Atari 5200 console. Breakout spawned an entire genre of Breakout clones, and the concept found new legs with Taito's 1986 Arkanoid, which itself spawned dozens of imitators.
+			The original arcade cabinet of Breakout featured artwork that revealed the game's plot to be that of a prison escape. According to this release, the player is actually playing as one of a prison's inmates attempting to knock a ball and chain into a wall of their prison cell with a mallet. If the player successfully destroys the wall in-game, their inmate escapes with others following. </p>
+		  
+	<p>The highest score achievable for one player is 896; this is done by eliminating two screens of bricks worth 448 points per screen. Once the second screen of bricks is destroyed, the ball in play harmlessly bounces off empty walls until the player restarts the game, as no additional screens are provided. However, a secret way to score beyond the 896 maximum is to play the game in two-player mode. If "Player One" completes the first screen on their third and last ball, then immediately and deliberately allows the ball to "drain", Player One's second screen is transferred to "Player Two" as a third screen, allowing Player Two to score a maximum of 1,344 points if they are adept enough to keep the third ball in play that long. Once the third screen is eliminated, the game is over.
+			</p>
+	<img src="/static/bricks.png" width="800px">
+</div>
+
+<% include ../partials/footer%>
+				
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function(){
+    $('.menu-toggle').click(function(){
+        $('nav').toggleClass('active')
+    })
+    $('ul li').click(function(){
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active');
+    })
+    $('.1vs1').click(function(){
+        window.location.href='1vs1.html';
+    })
+    $('.classic').click(function(){
+        window.location.href='breakout.html';
+    })
+    $(document).scroll(function(){
+        $('header').toggleClass('after')
+    })
+    
+});
+</script>
+</body>

@@ -1,0 +1,25 @@
+<% include ../partials/head%>
+
+<body>
+    <% include ../partials/header%>
+    <a class="title">Classic Breakout Game </a>
+    <a class="mobilegamescreen"> The game is not supported on you resolution</a>
+    
+
+    <img id="img_ball" src="static/descarcare3.png" class="not_display">
+    <img id="img_brick" src="static/brick.jpg" class="not_display">
+    <img id="lifes" src="/static/inima.png" class="not_display">
+    
+    <%if(loggedin){ %>
+        <canvas id="gameScreen" class="gameScreen" width="800" height="600"></canvas>
+    <%}else{ %>
+        <p  class="error_message">You need to be signed in to play.</p>
+        <a href="/login">Log in</a>
+        <%}%>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="module" src="/static/breakout.js"></script>
+
+    <% include ../partials/footer%>
+
+</body>
+

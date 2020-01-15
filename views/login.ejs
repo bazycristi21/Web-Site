@@ -1,0 +1,45 @@
+<% include ../partials/head%>
+<body>
+  <% include ../partials/header%>
+  <a class="title">Login </a>
+  <div class= "login_form">
+    
+    <form  action ='/login' method = "POST">
+        <div>
+          <label for = "email">Email</label>
+          <input type ="email" id= "email" name = "email" reqiured>
+        </div>
+        <div>
+          <label for = "password">Password</label>
+          <input type ="password" id= "password" name = "password" reqiured>
+        </div>
+        <button onclick="">Login</button>
+        
+    </form>
+    <p class="error_message"><%= loginmessage %></p>
+    <p> You don't have an account?</p>
+    <a href = "/register">Register now!</a>
+  </div>
+  
+  <script>
+    $(document).ready(function(){
+    $('.menu-toggle').click(function(){
+        $('nav').toggleClass('active')
+    })
+    $('ul li').click(function(){
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active');
+    })
+    $('.1vs1').click(function(){
+        window.location.href='1vs1.html';
+    })
+    $('.classic').click(function(){
+        window.location.href='breakout.html';
+    })
+    $(document).scroll(function(){
+        $('header').toggleClass('after')
+    })
+});
+</script>
+<% include ../partials/footer%>
+</body>

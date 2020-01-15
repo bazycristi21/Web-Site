@@ -1,0 +1,65 @@
+<% include ../partials/head%>
+<body>
+    <% include ../partials/header%>
+    <b><a class="title">Breakout </a></b>
+    <div class="text2">
+        <p>Breakout is an arcade game developed and published by Atari,  and released on May 13, 1976. It was conceptualized by Nolan Bushnell and Steve Bristow, influenced by the seminal 1972 Atari arcade game Pong, and built by Steve Wozniak, aided by Steve Jobs.</p>
+        <p>Google made a version of the Breakout game in which the bricks are images from Google search:</p>
+        <iframe width="920px" height="720px"
+    src="https://elgoog.im/breakout/">
+    </iframe>
+    <Article id="removeMe">
+        <p>Here you have 2 new and inovative versions of the Breakout game made entirely by me.</p>
+        <p>The first one is multiplayer. Take a friend and try to be the last one standing.</p>
+        <a href="1vs1"><input type="image"  src="/static/1vs1.jpg" class="1vs1 imgbt"></a>
+        <p>The second one is singe player. Achieve the best score by taking down as many bricks as possible.</p>
+        <a href="breakout"><input type="image"  src="/static/breakout.png" class="1vs1 imgbt" /></a>
+        <button class="button_remove" onclick = "removeImage();">Remove this</button>
+        
+    </Article>
+    <div id="div1">This text  has been created dynamically.</div>
+        <p>What do you want to play?</p>
+        <a  id = "singleplayer" class="singleplayer" onclick="f1();">SinglePlayer</a>
+        <a  id = "multyplayer" class="multyplayer" onclick="f2();">MultyPlayer</a>
+        <p> <button onclick = "swap()" class="button_submit"> Swap</button></p>
+        <p> You don't know the rules of the game?</p>
+        <p><a href="other"> Let's learn them.</a></p>
+        <p>Don't forget to donate to support my creation.</p>
+        <a href="https://www.paypal.com/ro/home" id="mylink" onclick="changeLink();" target="_blank">Paypal</a>
+    </div>
+
+    <% include ../partials/footer%>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.menu-toggle').click(function(){
+            $('nav').toggleClass('active')
+        })
+        $('ul li').click(function(){
+            $(this).siblings().removeClass('active');
+            $(this).toggleClass('active');
+        })
+        $('.1vs1').click(function(){
+            window.location.href='1vs1.html';
+        })
+        $('.classic').click(function(){
+            window.location.href='breakout.html';
+        })
+        $(document).scroll(function(){
+            $('header').toggleClass('after')
+        })
+        $(document).ready(function(){
+        setTimeout(function(){ var newDiv = document.createElement("div"); 
+        // and give it some content 
+        var newContent = document.createTextNode("Hi there and greetings!"); 
+        // add the text node to the newly created div
+        newDiv.appendChild(newContent);  
+
+        // add the newly created element and its content into the DOM 
+        var currentDiv = document.getElementById("div1"); 
+        document.body.insertBefore(newDiv, currentDiv);  }, 3000);
+    })  
+    });
+    </script>
+</body>

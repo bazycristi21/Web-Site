@@ -1,0 +1,40 @@
+<% include ../partials/head%>
+<body>
+    <% include ../partials/header%>
+
+<b><a class="title">Leaderboard </a></b>
+<div class="text2 h2">
+	<ol>
+        <li><%=Leaderboard[0][0]%>.....<%=Leaderboard[0][1]%></li>
+        <li><%=Leaderboard[1][0]%>.....<%=Leaderboard[1][1]%></li>
+        <li><%=Leaderboard[2][0]%>.....<%=Leaderboard[2][1]%></li>
+		<li><%=Leaderboard[3][0]%>.....<%=Leaderboard[3][1]%></li>
+		<li><%=Leaderboard[4][0]%>.....<%=Leaderboard[4][1]%></li>
+		
+	</ol>
+
+</div>
+<% include ../partials/footer%>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function(){
+    $('.menu-toggle').click(function(){
+        $('nav').toggleClass('active')
+    })
+    $('ul li').click(function(){
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active');
+    })
+    $('.1vs1').click(function(){
+        window.location.href='1vs1.html';
+    })
+    $('.classic').click(function(){
+        window.location.href='breakout.html';
+    })
+    $(document).scroll(function(){
+        $('header').toggleClass('after')
+    })
+    
+});
+</script>
+</body>

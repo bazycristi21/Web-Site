@@ -1,0 +1,65 @@
+<% include ../partials/head%>
+<body>
+    <% include ../partials/header%>
+	
+<b><a class="title">How to play </a></b>
+
+<div class="text2 flex-container">
+	<section tag="rules"><h4>RULES</h4>
+	
+	<p>There are 2 players. Each player is represented by a paddle.The paddle of the player who's turn is at one moment will have the paddle colored in red. Each player has to touch the ball when is his turn. If a player does not hit the ball on his turn before it falls, he will lose a life. </p>
+	<img src="static/1.png" class="rulesimg">
+	<p>Each player has 3 lifes. In order to win the game, a player has to remain the last standing player that still has at least one life. </p>
+	<img src="static/2.png" class ="rulesimg">
+	<p>At the begining of the game, any player can hit the ball. In this state, if the ball falls out, both players will lose a life. The first player that hits the ball on his turn, will not be able to hit it again until the other player hits it or loses a life.
+		When a player loses a life, the ball and paddles positions will restart. If a player loses all his lifes, the game is ending.
+	<img src="static/gameover.png" class="rulesimg">
+	</section >
+	
+	<section class="Controls"><h4>CONTROLS</h4>
+		<aside>
+			<table >
+				<tr >
+					<th></th>
+					<th><h1> Player 1</h1> </th>
+					<th><h1> Player 2</h1> </th>
+				</tr>
+				<tr>
+					<td><h3>Move Left</h3></td>
+					<td>Left key</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td><h3>Move Right</h3></td>
+					<td>Right key</td>
+					<td>D</td>
+				</tr>
+			</table>
+		</aside>
+	
+</section>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function(){
+    $('.menu-toggle').click(function(){
+        $('nav').toggleClass('active')
+    })
+    $('ul li').click(function(){
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active');
+    })
+    $('.1vs1').click(function(){
+        window.location.href='1vs1.html';
+    })
+    $('.classic').click(function(){
+        window.location.href='breakout.html';
+    })
+    $(document).scroll(function(){
+        $('header').toggleClass('after')
+    })});
+</script>
+<% include ../partials/footer%>
+</body>

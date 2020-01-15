@@ -1,0 +1,45 @@
+<% include ../partials/head%>
+
+<body>
+
+    <% include ../partials/header%>
+
+    <a class="title">Play 1 vs 1 with another player </a>
+    <a class="mobilegamescreen"> The game is not supported on you resolution</a>
+    <%if(loggedin){ %>
+        <canvas id="gameScreen" class="gameScreen" width="800" height="600"></canvas>
+    <%}else{ %>
+        <p  class="error_message">You need to be signed in to play.</p>
+        <a href="/login">Log in</a>
+        <%}%>
+
+    <img id="lifes" src="/static/inima.png" class="not_display">
+    <img id="img_ball" src="/static/descarcare3.png" class="not_display">
+    <img id="img_brick" src="/static/	brick.jpg" class="not_display">
+
+
+    <% include ../partials/footer%>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="module" src="/static/1vs1.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.menu-toggle').click(function(){
+            $('nav').toggleClass('active')
+        })
+        $('ul li').click(function(){
+            $(this).siblings().removeClass('active');
+            $(this).toggleClass('active');
+        })
+        $('.1vs1').click(function(){
+            window.location.href='1vs1.html';
+        })
+        $('.classic').click(function(){
+            window.location.href='breakout.html';
+        })
+        $(document).scroll(function(){
+            $('header').toggleClass('after')
+        })
+        
+    });
+    </script>
+</body>
